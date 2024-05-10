@@ -28,7 +28,7 @@ public class CallTime : MonoBehaviour
     }
     private void Init_UI() // init UI
     {
-        button_get.onClick.RemoveAllListeners();
+        button_get.onClick.RemoveAllListeners(); // safe code
         button_get.onClick.AddListener(Get_Time);
     }
     private void Update_Time() // Time Update

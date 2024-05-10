@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerChar;
     public GameObject playerCat;
     public GameObject playerPenguin;
+    public bool charNum = true; // true = cat, false = penguin
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         myChar = penguin;
         playerChar = playerPenguin;
         GameStart();
+        charNum = false; // when penguin , true
     }
 
     public void ChooseCat()
