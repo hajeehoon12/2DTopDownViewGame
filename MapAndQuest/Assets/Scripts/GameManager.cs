@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerChar;
     public GameObject playerCat;
     public GameObject playerPenguin;
+    public string playerName = "Name";
     public bool charNum = true; // true = cat, false = penguin
 
     private void Awake()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour
@@ -10,9 +11,9 @@ public class PlayerController : MonoBehaviour
     private bool walkCheck;
 
     CameraController cam;
-
     PlayerAnimatorController playerAnim;
     SpriteRenderer sprites;
+    public Text player_name;
 
     void Awake()
     {
@@ -24,17 +25,34 @@ public class PlayerController : MonoBehaviour
     {
         sprites = GetComponentInChildren<SpriteRenderer>();
         playerAnim = GetComponentInChildren<PlayerAnimatorController>();
+        
+
+        
     }
     void FixedUpdate()
     {
         Move(); // get move
-        
-        
+        NameUpdate();
+
     }
     private void Update()
     {
         Jump(); //get jump
     }
+
+    void NameUpdate()
+    {
+        if (GameManager.Instance.playerName != "" || GameManager.Instance.playerName != null)
+        {
+            player_name.text = GameManager.Instance.playerName;
+        }
+        else
+        {
+            player_name.text = "Debugging";
+        }
+    }
+
+
 
     void Jump()
     {
