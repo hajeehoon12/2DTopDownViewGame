@@ -4,11 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CharSelect : MonoBehaviour
 {
+   
 
-    public void GoMain()
+    public void SelectPenguin()
     {
-        SceneManager.LoadScene("MainScene");
+        GameManager.Instance.ChoosePenguin();
+        
     }
+
+    public void SelectCat()
+    {
+        GameManager.Instance.ChooseCat();
+       
+    }
+
 
 
 }

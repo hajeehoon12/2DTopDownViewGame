@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
 
     private bool walkCheck;
+
+    CameraController cam;
 
     PlayerAnimatorController playerAnim;
     SpriteRenderer sprites;
@@ -14,6 +17,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         moveSpeed = 10f;
+        cam = Camera.main.GetComponent<CameraController>();
     }
 
     private void Start()
@@ -34,8 +38,10 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        
         if (Input.GetButtonDown("Jump"))
         {
+
             playerAnim.Jumping();
         }
         else
@@ -47,8 +53,9 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
+        cam.CameraMove();
         Vector3 movePosition = Vector3.zero;
-
+        
         walkCheck = false;
 
         if (Input.GetAxisRaw("Horizontal") < 0)
