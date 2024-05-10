@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerUIController : MonoBehaviour
+public class PlayerUIController : MonoBehaviour // Player Name Controller
 {
     public Transform player_ui;
     public GameObject player;

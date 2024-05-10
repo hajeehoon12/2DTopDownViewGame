@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSpawn : MonoBehaviour
+public class CharacterSpawn : MonoBehaviour // Character Spawn Controller
 {
-    public GameObject spawnPrefab;
+    public GameObject spawnPrefab; // empty game object
     
-    public GameObject myPlayer;
+    public GameObject myPlayer; // to call player address
 
 
     // Start is called before the first frame update
@@ -14,15 +14,14 @@ public class CharacterSpawn : MonoBehaviour
     private void Awake()
     {
         spawnPrefab = GetComponent<GameObject>();  
-        
     }
 
 
     void Start()
     {
-        spawnPrefab = GameManager.Instance.playerChar;
-        myPlayer = Instantiate(spawnPrefab);
-        Camera.main.GetComponent<CameraController>().CameraInitializer(myPlayer);
+        spawnPrefab = GameManager.Instance.playerChar;  // selected character gameobject
+        myPlayer = Instantiate(spawnPrefab); // spawn selected prefab and make address named myPlayer
+        Camera.main.GetComponent<CameraController>().CameraInitializer(myPlayer); // make camera link to player
         
     }
 

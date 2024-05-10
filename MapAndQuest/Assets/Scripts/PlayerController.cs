@@ -27,21 +27,19 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Move();
+        Move(); // get move
         
         
     }
     private void Update()
     {
-        Jump();
+        Jump(); //get jump
     }
 
     void Jump()
     {
-        
         if (Input.GetButtonDown("Jump"))
         {
-
             playerAnim.Jumping();
         }
         else
@@ -53,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        cam.CameraMove();
+        cam.CameraMove(); // camera move for every fixedUpdate frame
         Vector3 movePosition = Vector3.zero;
         
         walkCheck = false;

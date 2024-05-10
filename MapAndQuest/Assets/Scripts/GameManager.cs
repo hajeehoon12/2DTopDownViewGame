@@ -33,18 +33,19 @@ public class GameManager : MonoBehaviour
     {
         myChar = penguin;
         playerChar = playerPenguin;
-        SceneManager.LoadScene("MainScene");
-        
-        
+        GameStart();
     }
 
     public void ChooseCat()
     { 
         myChar = cat;
         playerChar = playerCat;
-        SceneManager.LoadScene("MainScene");
-        
+        GameStart();
     }
 
-    
+    private void GameStart()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
 }

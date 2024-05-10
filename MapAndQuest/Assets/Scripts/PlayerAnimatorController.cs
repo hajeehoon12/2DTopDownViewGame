@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimatorController : MonoBehaviour
+public class PlayerAnimatorController : MonoBehaviour // Player Animator Controller
 {
     private static readonly int isWalking = Animator.StringToHash("IsWalking");
     private static readonly int isJumping = Animator.StringToHash("IsJumping");
