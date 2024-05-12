@@ -27,6 +27,11 @@ public class ParticipateController : MonoBehaviour
         participate.SetActive(false);
     }
 
+    private void Update()
+    {
+        //player2_text.text = GameManager.Instance.playerName;
+    }
+
     public void ActiveParticipate() // when participate button is clicked
     {
         participate.SetActive(true);
@@ -39,7 +44,7 @@ public class ParticipateController : MonoBehaviour
         else
         {
             player1.SetActive(true);
-            player2_text.text = GameManager.Instance.playerName;
+            player1_text.text = GameManager.Instance.playerName;
         }
         
     }
