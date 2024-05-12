@@ -9,6 +9,8 @@ public class CharacterSpawn : MonoBehaviour // Character Spawn Controller
     public GameObject myPlayer; // to call player address
 
 
+
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -22,6 +24,7 @@ public class CharacterSpawn : MonoBehaviour // Character Spawn Controller
         spawnPrefab = GameManager.Instance.playerChar;  // selected character gameobject
         myPlayer = Instantiate(spawnPrefab); // spawn selected prefab and make address named myPlayer
         Camera.main.GetComponent<CameraController>().CameraInitializer(myPlayer); // make camera link to player
+        GameManager.Instance.curPlayer = myPlayer;
         
     }
 
@@ -30,4 +33,7 @@ public class CharacterSpawn : MonoBehaviour // Character Spawn Controller
     {
         
     }
+
+    
+
 }

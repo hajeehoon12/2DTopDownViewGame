@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UI
+    uniqueID: 802042169
+    locked: 0
+  - name: LandScape
+    uniqueID: 1778664933
+    locked: 0

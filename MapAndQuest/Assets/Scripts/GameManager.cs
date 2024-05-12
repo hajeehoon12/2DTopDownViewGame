@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public string playerName = "Name";
     public bool charNum = true; // true = cat, false = penguin
 
+    public GameObject curPlayer;
+
     private void Awake()
     {
         myChar = GetComponent<Sprite>();
@@ -50,6 +52,16 @@ public class GameManager : MonoBehaviour
     private void GameStart()
     {
         SceneManager.LoadScene("MainScene");
+    }
+
+
+    public (float x, float y) CheckPlayerPosition(float opponent_x,float opponent_y)
+    {
+        
+        if (curPlayer != null) // code guard
+            return (Mathf.Abs(curPlayer.transform.position.x- opponent_x), Mathf.Abs(curPlayer.transform.position.y- opponent_y) );
+        else
+            return (0, 0);
     }
 
 }
