@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         myChar = cat;
         playerChar = playerCat;
         GameStart();
+        charNum = true;
     }
 
     private void GameStart()
