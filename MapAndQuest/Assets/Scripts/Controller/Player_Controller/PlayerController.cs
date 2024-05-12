@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     private bool walkCheck;
 
+    Vector3 point_mouse;
+
     CameraController cam;
     PlayerAnimatorController playerAnim;
     SpriteRenderer sprites;
@@ -38,6 +40,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Jump(); //get jump
+
+        point_mouse = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y, -Camera.main.transform.position.z));
+        if (point_mouse.x - this.transform.position.x > 0)
+        {
+            sprites.flipX = false;
+        }
+        else
+        {
+            sprites.flipX = true;
+        }
     }
 
     void NameUpdate()
